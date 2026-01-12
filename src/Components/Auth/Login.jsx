@@ -1,3 +1,7 @@
+
+"use client";
+
+
 import React, { useState } from "react";
 
 
@@ -51,6 +55,19 @@ const Login = () =>{
       />
 
       <input
+
+       
+         value={password}
+
+       onChange={(e) =>{
+       
+          setPassword(e.target.value);
+          
+
+       }}
+
+
+
          required
         type="password"
         placeholder="Enter your password"
