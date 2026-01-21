@@ -1,24 +1,28 @@
-
-
 import React from "react";
+import Header from "../BasicRequr/Header";
+import TaskListNumber from "../BasicRequr/TaskListNumber";
+import TaskListOne from "../TaskList/TaskListOne";
 
-const  EmployeeDashBoard  = () =>{
-   
+
+const EmployeeDashBoard = () =>{
+
     return (
         
-        <Div>EmployeeDashBoard
-    
-      <h1> hi this is Rakesh Gupta</h1>
+        <div className="bg bg-gray-800 h-screen p-10">
+          
+           <Header/>
+           <TaskListNumber/>
+           <TaskListOne/>
 
 
-
-        </Div>
+        </div>
 
 
 
     )
 
-}
 
+
+}
 
 export default EmployeeDashBoard;
