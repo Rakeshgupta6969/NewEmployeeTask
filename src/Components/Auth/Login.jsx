@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 
-const Login = () =>{
+const Login = ({handleLogin}) =>{
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -11,7 +11,9 @@ const Login = () =>{
   const submitHandler = (e) =>{
     
       e.preventDefault(); //here the value of e is prevented in the console function
-     console.log("your form is submitted")
+       handleLogin(email,password);
+       setEmail('');
+       setPassword('');
 
   }
 
@@ -32,26 +34,7 @@ const Login = () =>{
     className="flex flex-col gap-4">
       
       <input
-       
-        
-      //  value={email}
-
-      //  onChange={(e) =>{
-       
-      //     setEmail(e.target.value);
-          
-
-      //  }}
-
-
-
-      //   required
-      //   type="email"
-      //   placeholder="Enter your email"
-      //   className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg
-      //              focus:outline-none focus:ring-2 focus:ring-red-400"
-        
-
+  
           
        value={email}
   onChange={(e) => setEmail(e.target.value)}

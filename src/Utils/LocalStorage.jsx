@@ -1,7 +1,4 @@
 
-
-
-
 const Employees = [
   {
     id: 1,
@@ -219,7 +216,7 @@ const Admin = [
   const employees =  JSON.parse(localStorage.getItem('Employees',Employees));
   const admin = JSON.parse(localStorage.getItem('Admin',Admin));
 
-  console.log(employees,admin);
+   return {admin,employees};
 
 //   console.log(JSON.parse(data));  // here we covering the data in the JSON  formate
 
