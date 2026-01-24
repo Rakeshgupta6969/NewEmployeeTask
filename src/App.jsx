@@ -50,14 +50,13 @@ function App() {
 
       }
 
-
-
        if(authData){
 
         const employee =  authData.employees.find((e) => email == e.email && password == e.password)
 
       if(employee){
-          setUser('user')
+          setUser('user');
+          setLoggedInUserData(employee);
          localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}));
       }
    
@@ -87,7 +86,7 @@ function App() {
   
       {!user ? <Login  handleLogin={handleLogin}/> : ''}
 
-      {user == 'admin' ?    <AdminDashBoard/> : <EmployeeDashBoard/>}
+      {user == 'admin' ?    <AdminDashBoard/> : ( user == 'user' ? <EmployeeDashBoard   data = {loggedInUserData}/>:null)}
       {/* <EmployeeDashBoard/> */}
        {/* <AdminDashBoard/>  */}
 
