@@ -19,12 +19,12 @@ const AcceptedTask = () =>{
            <div  className="flex justify-between mt-3">
             
             <button
-             className="bg-green-500 py-2 px-2 text-sm"
+             className="bg-green-500 py-2 px-2 text-sm rounded-md "
 
             >Mark as Accepted</button>
 
             <button
-            className="bg-red-500 py-2 px-2 text-sm"
+            className="bg-red-500 py-2 px-2 text-sm rounded-md"
 
             >Mark as Failed</button>
 

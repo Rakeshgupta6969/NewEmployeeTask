@@ -2,8 +2,6 @@ import React from "react";
 
 const Header  = ({data}) =>{
          
-    console.log(data);
-
     return (
 
        <div className="flex items-center justify-between">

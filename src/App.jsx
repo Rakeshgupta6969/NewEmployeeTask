@@ -15,19 +15,20 @@ function App() {
    const authData = useContext(AuthContext);
 
    
-  //  useEffect(()=>{
+   useEffect(()=>{
 
      
-  //  if(authData){
-  //   const loggedInUser = localStorage.getItem("loggedInUser");
+   if(authData){
+    const loggedInUser = localStorage.getItem('loggedInUser');
 
-  //   if(loggedInUser){
-  //     setUser(loggedInUser.role);
-  //   }
-  //  }
+    if(loggedInUser){
+        const  userData = JSON.parse(loggedInUser)
+        console.log(userData);
+    }
+   }
 
 
-  //  },[])
+   },[])
 
  
   
