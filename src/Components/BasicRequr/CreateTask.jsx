@@ -3,9 +3,27 @@ import React from "react";
 
 const CreateTask = () =>{
 
+    const submitHandler = (e) =>{
+
+        e.preventDefault();
+        
+        console.log("task created");
+
+
+
+    }
+
+
        return(
 <div className="min-h-screen flex items-center justify-center ">
-  <form className="bg-gray-500 shadow-lg rounded-xl p-6 w-full max-w-md space-y-4">
+  <form 
+    
+    onSubmit={(e) =>{
+      submitHandler(e)
+    }}
+  
+  
+  className="bg-gray-500 shadow-lg rounded-xl p-6 w-full max-w-md space-y-4">
     
     <h2 className="text-2xl font-bold text-center text-gray-800">
       Create New Task

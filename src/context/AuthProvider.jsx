@@ -5,7 +5,8 @@ import { getLocalStorage, setLocalStorage } from "../Utils/LocalStorage";
 
   
 const AuthProvider = ({children}) =>{
-
+      
+    //    localStorage.clear();
 
        const [UserData,setUserData] = useState(null);
   

@@ -15,25 +15,25 @@ const TaskListOne = ({data}) =>{
       
           if(task.active){
             return(
-               <AcceptedTask key = {id}/>
+               <AcceptedTask key = {id} data = {task}  />
             )
           }
 
           if(task.newTask){
             return(
-               <NewTask key = {id}/>
+               <NewTask key = {id}  data = {task} />
             )
           }
 
           if(task.completed){
             return(
-               <CompleteTask key = {id}/>
+               <CompleteTask key = {id}  data = {task} />
             )
           }
 
           if(task.failed){
             return(
-               <FailedTask  key = {id}/>
+               <FailedTask  key = {id}  data = {task} />
             )
           }
 
