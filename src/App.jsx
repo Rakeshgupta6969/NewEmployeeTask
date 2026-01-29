@@ -23,7 +23,8 @@ function App() {
 
     if(loggedInUser){
         const  userData = JSON.parse(loggedInUser)
-        console.log(userData);
+         setUser(userData.role)
+       setLoggedInUserData(userData.data)
     }
    }
 
@@ -87,7 +88,7 @@ function App() {
   
       {!user ? <Login  handleLogin={handleLogin}/> : ''}
 
-      {user == 'admin' ?    <AdminDashBoard/> : ( user == 'user' ? <EmployeeDashBoard   data = {loggedInUserData}/>:null)}
+      {user == 'admin' ?    <AdminDashBoard changeUser = {setUser}   /> : ( user == 'user' ? <EmployeeDashBoard  changeUser = {setUser}  data = {loggedInUserData}/>:null)}
       {/* <EmployeeDashBoard/> */}
        {/* <AdminDashBoard/>  */}
 

@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 const CreateTask = () =>{
 
+
+
+   const [taskTitle,setTaskTitle] = useState('');
+   const [TaskDescription,setTaskDescription] = useState('');
+   const [taskDate,setTaskDate] = useState('');
+   const [assignTo,setAssignTo] = useState('');
+   const [category,setCategory] = useState('');
+
+
+   
+   const [task,setTask] = useState({})
+ 
     const submitHandler = (e) =>{
 
         e.preventDefault();
         
-        console.log("task created");
+        
 
+        //  these are because of the to get the new form after the creation of the task.
+        setAssignTo('');
+        setCategory('');
+        setTaskDate('');
+        setTaskTitle('');
+        setTaskDescription('');
+
+
+      setTask({taskTitle,taskDate,TaskDescription,assignTo,category,active:false ,newTask:true,failed:true,completed:true})
+      
+       const data =   localStorage.getItem('Employees')
+        console.log(data);
 
 
     }
@@ -35,6 +59,14 @@ const CreateTask = () =>{
         Task Title
       </label>
       <input
+        
+        value = {taskTitle}
+        onChange={(e) =>{
+         
+          setTaskTitle(e.target.value);
+
+        }}
+        
         type="text"
         placeholder="Enter your Task Title"
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -47,6 +79,12 @@ const CreateTask = () =>{
         Description
       </label>
       <textarea
+         value = {TaskDescription}
+        onChange={(e) =>{
+         
+          setTaskDescription(e.target.value);
+
+        }}
         placeholder="About your task"
         rows="3"
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -58,6 +96,16 @@ const CreateTask = () =>{
         Date
       </label>
       <input
+         
+           
+        value = {taskDate}
+        onChange={(e) =>{
+         
+          setTaskDate(e.target.value);
+
+        }}
+        
+         
         type="date"
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
@@ -69,6 +117,15 @@ const CreateTask = () =>{
         Assign To
       </label>
       <input
+        
+          
+        value = {assignTo}
+        onChange={(e) =>{
+         
+          setAssignTo(e.target.value);
+
+        }}
+        
         type="text"
         placeholder="Rakesh Gupta"
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -80,6 +137,15 @@ const CreateTask = () =>{
         Category
       </label>
       <input
+         
+           
+        value = {category}
+        onChange={(e) =>{
+         
+          setCategory(e.target.value);
+
+        }}
+        
         type="text"
         placeholder="Project"
         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

@@ -3,13 +3,13 @@ import Header from "../BasicRequr/Header";
 import CreateTask from "../BasicRequr/CreateTask";
 import AllTask from "../BasicRequr/AllTask";
 
-const AdminDashBoard = () =>{
+const AdminDashBoard = (props) =>{
     
      return(
 
       <div className="p-5 h-screen w-full">
 
-      <Header/>
+      <Header   changeUser = {props.changeUser}   />
 
        <CreateTask/>
 
