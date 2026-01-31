@@ -9,11 +9,11 @@ const CreateTask = () =>{
    const [TaskDescription,setTaskDescription] = useState('');
    const [taskDate,setTaskDate] = useState('');
    const [assignTo,setAssignTo] = useState('');
-   const [category,setCategory] = useState('');
+   const [taskCategory,setCategory] = useState('');
 
 
    
-   const [task,setTask] = useState({})
+   const [newTask,setNewTask] = useState({})
  
     const submitHandler = (e) =>{
 
@@ -29,11 +29,25 @@ const CreateTask = () =>{
         setTaskDescription('');
 
 
-      setTask({taskTitle,taskDate,TaskDescription,assignTo,category,active:false ,newTask:true,failed:true,completed:true})
+      setNewTask({taskTitle,taskDate,TaskDescription,assignTo,taskCategory,active:false ,newTask:true,failed:false,completed:true})
       
-       const data =   localStorage.getItem('Employees')
-        console.log(data);
+       const data =  JSON.parse(localStorage.getItem('Employees'));
+      
 
+           data.forEach((emp) =>{
+               
+               if(assignTo == emp.firstName){
+                 
+                  emp.tasks.push(newTask);
+                  
+                  
+
+               }
+           })
+        
+           localStorage.setItem('Employees',JSON.stringify(data));
+
+          console.log(data);
 
     }
 
@@ -139,7 +153,7 @@ const CreateTask = () =>{
       <input
          
            
-        value = {category}
+        value = {taskCategory}
         onChange={(e) =>{
          
           setCategory(e.target.value);

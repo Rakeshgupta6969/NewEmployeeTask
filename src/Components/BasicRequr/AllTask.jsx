@@ -7,7 +7,7 @@ const AllTask = () =>{
       
     const authData = useContext(AuthContext);
 
-    console.log(authData);
+  
 
     return(
 
