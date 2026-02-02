@@ -2,9 +2,7 @@ import React, { useState } from "react";
 
 
 const CreateTask = () =>{
-
-
-
+ 
    const [taskTitle,setTaskTitle] = useState('');
    const [TaskDescription,setTaskDescription] = useState('');
    const [taskDate,setTaskDate] = useState('');
@@ -22,11 +20,7 @@ const CreateTask = () =>{
         
 
         //  these are because of the to get the new form after the creation of the task.
-        setAssignTo('');
-        setCategory('');
-        setTaskDate('');
-        setTaskTitle('');
-        setTaskDescription('');
+      
 
 
       setNewTask({taskTitle,taskDate,TaskDescription,assignTo,taskCategory,active:false ,newTask:true,failed:false,completed:true})
@@ -48,6 +42,13 @@ const CreateTask = () =>{
            localStorage.setItem('Employees',JSON.stringify(data));
 
           console.log(data);
+
+
+        setAssignTo('');
+        setCategory('');
+        setTaskDate('');
+        setTaskTitle('');
+        setTaskDescription('');
 
     }
 

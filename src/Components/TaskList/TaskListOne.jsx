@@ -33,7 +33,7 @@ const TaskListOne = ({data}) =>{
 
           if(task.failed){
             return(
-               <FailedTask  key = {id}  data = {task} />
+               <FailedTask  key = {id}  data = {task } />
             )
           }
 
