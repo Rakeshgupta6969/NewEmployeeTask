@@ -1,38 +1,30 @@
 import React, { useState } from "react";
 
-const Header  = (props) =>{
+const Header = (props) => {
+  const logOutUser = () => {
+    localStorage.setItem('loggedInUser', '');
+    props.changeUser('');
+    // window.location.reload();
+  };
 
-    // const [userName,setUserName] = useState('');
-     
-    //   if(!data){
-    //     setUserName('Admin');
-    //   }
-    //   else{
-    //     setUserName(data.firstName);
-    //   }
-    
-        const logOutUser = () =>{
-         
-            localStorage.setItem('loggedInUser','');
-            props.changeUser('');
+  return (
+    <div className="bg-white px-8 py-6 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between transition-all hover:shadow-md">
+      <div>
+        <h1 className="text-xl font-medium text-gray-500">
+          Hello, <br />
+          <span className="text-3xl font-bold text-gray-900">
+            {props.firstName ? props.firstName : "Admin"} 👋
+          </span>
+        </h1>
+      </div>
+      <button
+        onClick={logOutUser}
+        className="bg-red-500 text-white font-semibold rounded-xl py-2.5 px-6 hover:bg-red-600 hover:shadow-lg hover:shadow-red-500/30 active:scale-[0.98] transition-all duration-300"
+      >
+        Log out
+      </button>
+    </div>
+  );
+};
 
-            // window.location.reload();
-
-
-        }
-
-         
-    return ( 
-
-       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-medium"> Hello <br/> <span className="text-3xl font-semibold"> {props.firstName} </span> </h1>
-
-        <button   onClick={logOutUser}  className="bg-red-400 font-semibold  rounded-b-md  py-2 px-2 ">Log out</button>
-       </div>
-
-    )
-
-
-}
-
-export default  Header;
+export default Header;
